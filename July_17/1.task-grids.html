@@ -1,0 +1,48 @@
+<!-- Task - Create Card like Grid UI using DOM API
+
+let numbers = [10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105];
+Even -> Red
+Odd -> Blue -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid like UI</title>
+  </head>
+  <body>
+    <div id="box"></div>
+  </body>
+</html>
+
+<script>
+  let numbers = [
+    10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100,
+    105,
+  ];
+
+  const numElem = document.getElementById("box");
+  numElem.style.display = "flex";
+  numElem.style.flexWrap = "wrap";
+  numElem.style.gap = "10px";
+
+  for (let i = 0; i < numbers.length; i++) {
+    const divTag = document.createElement("div");
+    divTag.innerText = numbers[i];
+    divTag.style.color = "white";
+    divTag.style.display = "flex";
+    divTag.style.justifyContent = "center";
+    divTag.style.alignItems = "center";
+    divTag.style.width = "200px";
+    divTag.style.height = "100px";
+
+    if (divTag.innerText % 2 == 0) {
+      divTag.style.backgroundColor = "red";
+    } else {
+      divTag.style.backgroundColor = "Blue";
+    }
+
+    numElem.appendChild(divTag);
+  }
+</script>
